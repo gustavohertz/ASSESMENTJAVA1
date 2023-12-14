@@ -26,6 +26,8 @@ public class PokeUtil {
 
             HttpClient client = HttpClient.newBuilder().build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            int statusCode = response.statusCode();
+                log.info("Status Code: " + statusCode);
 
             ObjectMapper mapper = JsonMapper.builder().addModule(new JavaTimeModule()).build();
             Pokemon pokemonDetails = mapper.readValue(response.body(), Pokemon.class);
