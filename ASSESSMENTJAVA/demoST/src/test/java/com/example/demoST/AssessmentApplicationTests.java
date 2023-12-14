@@ -16,7 +16,7 @@ class AssessmentApplicationTests {
 	void testGetPokemon(){
 		PokeUtil pokeUtil = new PokeUtil();
 		Pokemon pokemon = pokeUtil.getPokemon(1L);
-		System.out.println(pokemon);
+		log.info("O pokemon é:" + pokemon);
 	}
 	@Test
 	void testQuantidade(){
